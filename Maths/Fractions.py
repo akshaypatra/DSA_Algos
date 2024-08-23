@@ -7,8 +7,8 @@ def add_fractions(a, b):
     return fraction_sum
 
 
-fraction1 = Fraction(-4, 1)  # 1/3
-fraction2 = Fraction(6, 1)  # 1/6
+fraction1 = Fraction(-4, 7)  # 1/3
+fraction2 = Fraction(6, 5)  # 1/6
 
 result = add_fractions(fraction1, fraction2)
 print("The sum of the fractions is:", result)
@@ -21,3 +21,7 @@ print(fraction1.denominator)
 
 # to get sum directly
 print(fraction1+fraction2)
+
+print(fraction1-fraction2)
+
+print(fraction1*fraction2)
