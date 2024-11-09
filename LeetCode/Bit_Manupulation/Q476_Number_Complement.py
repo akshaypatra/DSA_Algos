@@ -11,7 +11,6 @@ class Solution:
             
             return decimal_number
         
-
         # to convert number into binary values
         x=bin(num)[2:]
         res=""
