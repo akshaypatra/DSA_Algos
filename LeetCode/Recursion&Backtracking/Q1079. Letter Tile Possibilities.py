@@ -33,6 +33,7 @@ Constraints:
 tiles consists of uppercase English letters.
 
 '''
+from collections import Counter
 
 class Solution:
     def numTilePossibilities(self, tiles: str) -> int:
