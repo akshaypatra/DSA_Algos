@@ -54,6 +54,9 @@ meetings[i].length == 2
 
 class Solution:
     def countDays(self, days: int, meetings: List[List[int]]) -> int:
+
+        # Solution 1
+        '''
         meetings.sort()  # Sort meetings by start time
         merged = []
         
@@ -72,7 +75,22 @@ class Solution:
 
         free_days += days - last_meeting_end  # Days after the last meeting
         return free_days
+        '''
 
+
+
+        # Solution 2 
+
+        meetings.sort()
+        prev_end=0
+
+        for start,end in meetings:
+            start=max(start,prev_end+1)
+            length=end-start+1
+            days-=max(length,0)
+            prev_end=max(prev_end,end)
+
+        return days
 
             
             
