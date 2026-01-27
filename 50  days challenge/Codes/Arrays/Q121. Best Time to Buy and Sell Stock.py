@@ -79,15 +79,36 @@ class Solution:
 
         #Solution 3 Greedy approach O(n)
 
-        buy=prices[0]
-        res=0
+        # buy=prices[0]
+        # res=0
 
-        for i in range(1,len(prices)):
-            profit=prices[i]-buy
-            res=max(res,profit)
-            buy=min(buy,prices[i])
+        # for i in range(1,len(prices)):
+        #     profit=prices[i]-buy
+        #     res=max(res,profit)
+        #     buy=min(buy,prices[i])
         
-        return res
+        # return res
+    
+        '''
+        Solution :
+
+        - Initialize : cur_max , max_profit = 0,0
+        - start from end and check if 
+            - cur_max > element -> max_profit = max(max_profit ,cur_max - element)
+            - cur_max < element -> cur_max= element
+        '''
+
+
+        cur_max = 0
+        max_profit = 0
+
+        for i in range(len(prices)-1,-1,-1):
+            if prices[i]< cur_max :
+                max_profit = max (max_profit , cur_max - prices[i])
+            else :
+                cur_max = prices[i]
+            
+        return max_profit
 
 
 
