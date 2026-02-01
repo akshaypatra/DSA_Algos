@@ -2,10 +2,7 @@
 3315. Construct the Minimum Bitwise Array II
 Solved
 Medium
-Topics
-premium lock icon
-Companies
-Hint
+
 You are given an array nums consisting of n prime integers.
 
 You need to construct an array ans of length n, such that, for each index i, the bitwise OR of ans[i] and ans[i] + 1 is equal to nums[i], i.e. ans[i] OR (ans[i] + 1) == nums[i].
