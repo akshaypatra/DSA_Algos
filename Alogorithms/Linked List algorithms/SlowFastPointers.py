@@ -1,5 +1,7 @@
 """
-slow_fast_pointer.py
+slow_fast_pointer.py 
+
+Floyd's cycle detection algorithm
 
 This module explains and demonstrates the Slow and Fast Pointer technique
 (commonly called the Tortoise and Hare algorithm).
