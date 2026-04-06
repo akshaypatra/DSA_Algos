@@ -52,21 +52,49 @@ class Solution:
         TC : O(n)
         SC : O(1)
         '''
-        nums.sort()
-        max_element=nums[0]
-        max_count=1
+        # nums.sort()
+        # max_element=nums[0]
+        # max_count=1
 
-        cur_count=1
-        for i in range(1,len(nums)):
-            if nums[i]!=nums[i-1]:
-                if cur_count >= max_count :
-                    max_count = cur_count
-                    max_element = nums[i-1]
-                cur_count = 1
-            else :
-                cur_count += 1
-        if cur_count > max_count :
-            max_count = cur_count
-            max_element = nums[i-1]
+        # cur_count=1
+        # for i in range(1,len(nums)):
+        #     if nums[i]!=nums[i-1]:
+        #         if cur_count >= max_count :
+        #             max_count = cur_count
+        #             max_element = nums[i-1]
+        #         cur_count = 1
+        #     else :
+        #         cur_count += 1
+        # if cur_count > max_count :
+        #     max_count = cur_count
+        #     max_element = nums[i-1]
 
-        return max_element
+        # return max_element
+
+
+        '''
+        Approach 3 : Majority element  algorithm
+        TC : O(n)
+        SC : O(1)
+
+        We use the same idea of approach 1 above but actually, we don't have to use HashMap.
+        We use two variables res and majority.
+
+        ⭐️ Points
+
+            - res is return value.
+            - majority is frequency of majority number(= res).
+            - Every time current number is the same as res, we add +1 to majority. If not, we add -1 to majority.
+            - When majority is 0, it's time to change majority number(= res), because every time current number and res are different,
+            we add -1 to majority, so if majority is 0, that means a current majority number(= res) is not the majority number anymore
+            That's why when majority is 0, update res with current number.
+        '''
+        res = majority = 0
+        
+        for n in nums:
+            if majority == 0:
+                res = n
+            
+            majority += 1 if n == res else -1
+        
+        return res
