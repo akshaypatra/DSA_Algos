@@ -1,5 +1,5 @@
 '''
-Majority element  algorithm :
+Majority element  algorithm (Boyer–Moore) :
 
         TC : O(n)
         SC : O(1)
